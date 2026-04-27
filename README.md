@@ -4,23 +4,88 @@ Various examples of Ansible code.
 
 (This file is generated. Do not update it manually. See the section below.)
 
+## Contents
+
+* [Ansible contribution](#Ansible_contribution)
+* [Ansible filter](#Ansible_filter)
+* [Ansible keyword](#Ansible_keyword)
+* [Ansible plugins](#Ansible_plugins)
+* [Ansible test](#Ansible_test)
+* [Basics](#Basics)
+* [Boolean](#Boolean)
+* [Cache](#Cache)
+* [Callback](#Callback)
+* [Collection](#Collection)
+* [Conditions](#Conditions)
+* [Config](#Config)
+* [Custom filter](#Custom_filter)
+* [Custom module](#Custom_module)
+* [Custom test](#Custom_test)
+* [Data structure](#Data_structure)
+* [Delegation](#Delegation)
+* [Deprecated](#Deprecated)
+* [Devel](#Devel)
+* [Dictionary](#Dictionary)
+* [Handlers](#Handlers)
+* [Import](#Import)
+* [Include](#Include)
+* [Indentation](#Indentation)
+* [Inventory](#Inventory)
+* [Inventory plugin](#Inventory_plugin)
+* [Jinja](#Jinja)
+* [Jinja filter](#Jinja_filter)
+* [Jinja function](#Jinja_function)
+* [Jinja template](#Jinja_template)
+* [Lint](#Lint)
+* [List](#List)
+* [Lookup](#Lookup)
+* [Loop](#Loop)
+* [Math](#Math)
+* [Methods](#Methods)
+* [Module](#Module)
+* [Parameter](#Parameter)
+* [Playbook](#Playbook)
+* [Python method](#Python_method)
+* [Recursion](#Recursion)
+* [Role](#Role)
+* [Setup](#Setup)
+* [Special variables](#Special_variables)
+* [Strategy plugin](#Strategy_plugin)
+* [String](#String)
+* [Syntax](#Syntax)
+* [Tags](#Tags)
+* [Template](#Template)
+* [Test](#Test)
+* [Tools](#Tools)
+* [Utility](#Utility)
+* [Vars](#Vars)
+* [vbotka.ansible_lib](#vbotka.ansible_lib)
 
 ## Index
 
 
-**Ansible filter**
+<a name="Ansible_contribution"></a>Ansible contribution
+  - community.general [306](https://github.com/vbotka/ansible-examples/tree/master/examples/example-306),
+
+<a name="Ansible_filter"></a>Ansible filter
   - ansible.netcommon.ipaddr [254](https://github.com/vbotka/ansible-examples/tree/master/examples/example-254),
   - ansible.utils.hwaddr [197](https://github.com/vbotka/ansible-examples/tree/master/examples/example-197),
   - ansible.utils.keep_keys [289](https://github.com/vbotka/ansible-examples/tree/master/examples/example-289),
   - ansible.utils.remove_keys [289](https://github.com/vbotka/ansible-examples/tree/master/examples/example-289),
   - ansible.utils.replace_keys [289](https://github.com/vbotka/ansible-examples/tree/master/examples/example-289),
+  - basename [319](https://github.com/vbotka/ansible-examples/tree/master/examples/example-319),
   - cartesian [156](https://github.com/vbotka/ansible-examples/tree/master/examples/example-156),
   - combine [111](https://github.com/vbotka/ansible-examples/tree/master/examples/example-111),
   - community.general.dict_kv [281](https://github.com/vbotka/ansible-examples/tree/master/examples/example-281),
   - community.general.groupby_as_dict [282](https://github.com/vbotka/ansible-examples/tree/master/examples/example-282),
   - community.general.jc [284](https://github.com/vbotka/ansible-examples/tree/master/examples/example-284),
+  - community.general.keep_keys [310](https://github.com/vbotka/ansible-examples/tree/master/examples/example-310),
+  - community.general.lists_difference [301](https://github.com/vbotka/ansible-examples/tree/master/examples/example-301),
+  - community.general.lists_intersect [302](https://github.com/vbotka/ansible-examples/tree/master/examples/example-302),
   - community.general.lists_mergeby [286](https://github.com/vbotka/ansible-examples/tree/master/examples/example-286),
   - community.general.path_join [285](https://github.com/vbotka/ansible-examples/tree/master/examples/example-285),
+  - community.general.remove_keys [307](https://github.com/vbotka/ansible-examples/tree/master/examples/example-307),
+  - community.general.reveal_ansible_type [311](https://github.com/vbotka/ansible-examples/tree/master/examples/example-311),
   - community.general.version_sort [283](https://github.com/vbotka/ansible-examples/tree/master/examples/example-283),
   - d() [245](https://github.com/vbotka/ansible-examples/tree/master/examples/example-245),
   - default [245](https://github.com/vbotka/ansible-examples/tree/master/examples/example-245),
@@ -42,11 +107,14 @@ Various examples of Ansible code.
 [43](https://github.com/vbotka/ansible-examples/tree/master/examples/example-043),
 [69](https://github.com/vbotka/ansible-examples/tree/master/examples/example-069),
 [267](https://github.com/vbotka/ansible-examples/tree/master/examples/example-267),
+[314](https://github.com/vbotka/ansible-examples/tree/master/examples/example-314),
   - json_query filter contains [43](https://github.com/vbotka/ansible-examples/tree/master/examples/example-043),
 [69](https://github.com/vbotka/ansible-examples/tree/master/examples/example-069),
   - json_query function merge [290](https://github.com/vbotka/ansible-examples/tree/master/examples/example-290),
   - json_query functions [140](https://github.com/vbotka/ansible-examples/tree/master/examples/example-140),
   - json_query issue to_yaml|from_yaml [267](https://github.com/vbotka/ansible-examples/tree/master/examples/example-267),
+  - lists_difference [301](https://github.com/vbotka/ansible-examples/tree/master/examples/example-301),
+  - lists_intersect [302](https://github.com/vbotka/ansible-examples/tree/master/examples/example-302),
   - password_hash [76](https://github.com/vbotka/ansible-examples/tree/master/examples/example-076),
   - product [156](https://github.com/vbotka/ansible-examples/tree/master/examples/example-156),
   - quote [183](https://github.com/vbotka/ansible-examples/tree/master/examples/example-183),
@@ -61,9 +129,10 @@ Various examples of Ansible code.
   - union [112](https://github.com/vbotka/ansible-examples/tree/master/examples/example-112),
   - zip [56](https://github.com/vbotka/ansible-examples/tree/master/examples/example-056),
 
-**Ansible keyword**
+<a name="Ansible_keyword"></a>Ansible keyword
   - become [105](https://github.com/vbotka/ansible-examples/tree/master/examples/example-105),
   - block [146](https://github.com/vbotka/ansible-examples/tree/master/examples/example-146),
+  - check_mode [323](https://github.com/vbotka/ansible-examples/tree/master/examples/example-323),
   - environment [230](https://github.com/vbotka/ansible-examples/tree/master/examples/example-230),
   - post_tasks [229](https://github.com/vbotka/ansible-examples/tree/master/examples/example-229),
   - pre_tasks [229](https://github.com/vbotka/ansible-examples/tree/master/examples/example-229),
@@ -75,10 +144,11 @@ Various examples of Ansible code.
   - vars_files [97](https://github.com/vbotka/ansible-examples/tree/master/examples/example-097),
   - when [146](https://github.com/vbotka/ansible-examples/tree/master/examples/example-146),
 
-**Ansible plugins**
+<a name="Ansible_plugins"></a>Ansible plugins
   - Connection [218](https://github.com/vbotka/ansible-examples/tree/master/examples/example-218),
 
-**Ansible test**
+<a name="Ansible_test"></a>Ansible test
+  - community.general.ansible_type [311](https://github.com/vbotka/ansible-examples/tree/master/examples/example-311),
   - defined [160](https://github.com/vbotka/ansible-examples/tree/master/examples/example-160),
   - exists [214](https://github.com/vbotka/ansible-examples/tree/master/examples/example-214),
   - in [206](https://github.com/vbotka/ansible-examples/tree/master/examples/example-206),
@@ -87,7 +157,7 @@ Various examples of Ansible code.
   - mapping [201](https://github.com/vbotka/ansible-examples/tree/master/examples/example-201),
   - version [147](https://github.com/vbotka/ansible-examples/tree/master/examples/example-147),
 
-**Basics**
+<a name="Basics"></a>Basics
   - always [52](https://github.com/vbotka/ansible-examples/tree/master/examples/example-052),
   - async [87](https://github.com/vbotka/ansible-examples/tree/master/examples/example-087),
   - Asynchronous actions and polling [87](https://github.com/vbotka/ansible-examples/tree/master/examples/example-087),
@@ -95,15 +165,18 @@ Various examples of Ansible code.
   - Boolean [151](https://github.com/vbotka/ansible-examples/tree/master/examples/example-151),
   - Callback [150](https://github.com/vbotka/ansible-examples/tree/master/examples/example-150),
   - Compare dictionaries [253](https://github.com/vbotka/ansible-examples/tree/master/examples/example-253),
+  - dict [312](https://github.com/vbotka/ansible-examples/tree/master/examples/example-312),
   - Expansion of expressions [149](https://github.com/vbotka/ansible-examples/tree/master/examples/example-149),
   - Expansion of variables [139](https://github.com/vbotka/ansible-examples/tree/master/examples/example-139),
   - falsy [272](https://github.com/vbotka/ansible-examples/tree/master/examples/example-272),
   - Fibonacci [70](https://github.com/vbotka/ansible-examples/tree/master/examples/example-070),
   - Filters [32](https://github.com/vbotka/ansible-examples/tree/master/examples/example-032),
   - Handlers [93](https://github.com/vbotka/ansible-examples/tree/master/examples/example-093),
+[321](https://github.com/vbotka/ansible-examples/tree/master/examples/example-321),
   - Inventory [80](https://github.com/vbotka/ansible-examples/tree/master/examples/example-080),
   - Jinja2 [204](https://github.com/vbotka/ansible-examples/tree/master/examples/example-204),
   - Lazy evaluation [131](https://github.com/vbotka/ansible-examples/tree/master/examples/example-131),
+[313](https://github.com/vbotka/ansible-examples/tree/master/examples/example-313),
   - lookup plugins [39](https://github.com/vbotka/ansible-examples/tree/master/examples/example-039),
   - Loop [176](https://github.com/vbotka/ansible-examples/tree/master/examples/example-176),
   - MySQL command [61](https://github.com/vbotka/ansible-examples/tree/master/examples/example-061),
@@ -128,26 +201,26 @@ Various examples of Ansible code.
   - Xen [44](https://github.com/vbotka/ansible-examples/tree/master/examples/example-044),
   - ZFS [42](https://github.com/vbotka/ansible-examples/tree/master/examples/example-042),
 
-**Boolean**
+<a name="Boolean"></a>Boolean
   - and, or, xor [67](https://github.com/vbotka/ansible-examples/tree/master/examples/example-067),
 
-**Cache**
+<a name="Cache"></a>Cache
   - cache plugin [181](https://github.com/vbotka/ansible-examples/tree/master/examples/example-181),
   - fact_caching = jsonfile [57](https://github.com/vbotka/ansible-examples/tree/master/examples/example-057),
   - jsonfile cache plugin [181](https://github.com/vbotka/ansible-examples/tree/master/examples/example-181),
 
-**Callback**
+<a name="Callback"></a>Callback
   - community.general.log_plays [250](https://github.com/vbotka/ansible-examples/tree/master/examples/example-250),
   - log_plays [250](https://github.com/vbotka/ansible-examples/tree/master/examples/example-250),
 
-**Collection**
+<a name="Collection"></a>Collection
   - F5 modules [81](https://github.com/vbotka/ansible-examples/tree/master/examples/example-081),
   - gcp [144](https://github.com/vbotka/ansible-examples/tree/master/examples/example-144),
 
-**Conditions**
+<a name="Conditions"></a>Conditions
   - when [96](https://github.com/vbotka/ansible-examples/tree/master/examples/example-096),
 
-**Config**
+<a name="Config"></a>Config
   - action_warnings [115](https://github.com/vbotka/ansible-examples/tree/master/examples/example-115),
   - ANSIBLE_ACTION_WARNINGS [115](https://github.com/vbotka/ansible-examples/tree/master/examples/example-115),
   - ANSIBLE_CACHE_PLUGIN [261](https://github.com/vbotka/ansible-examples/tree/master/examples/example-261),
@@ -168,54 +241,62 @@ Various examples of Ansible code.
   - remote_tmp [223](https://github.com/vbotka/ansible-examples/tree/master/examples/example-223),
   - remote_user [205](https://github.com/vbotka/ansible-examples/tree/master/examples/example-205),
 
-**Custom filter**
+<a name="Custom_filter"></a>Custom filter
+  - ansible.utils.keep_keys [303](https://github.com/vbotka/ansible-examples/tree/master/examples/example-303),
+  - ansible.utils.remove_keys [304](https://github.com/vbotka/ansible-examples/tree/master/examples/example-304),
+  - ansible.utils.replace_keys [305](https://github.com/vbotka/ansible-examples/tree/master/examples/example-305),
   - combine_lossless [262](https://github.com/vbotka/ansible-examples/tree/master/examples/example-262),
   - dict_flatten [138](https://github.com/vbotka/ansible-examples/tree/master/examples/example-138),
   - dict_utils [138](https://github.com/vbotka/ansible-examples/tree/master/examples/example-138),
+  - keep_keys [303](https://github.com/vbotka/ansible-examples/tree/master/examples/example-303),
   - mac-vendor-lookup [292](https://github.com/vbotka/ansible-examples/tree/master/examples/example-292),
   - netaddr_iter_iprange [254](https://github.com/vbotka/ansible-examples/tree/master/examples/example-254),
+  - remove_keys [304](https://github.com/vbotka/ansible-examples/tree/master/examples/example-304),
+  - replace_keys [305](https://github.com/vbotka/ansible-examples/tree/master/examples/example-305),
 
-**Custom module**
+<a name="Custom_module"></a>Custom module
   - Python subprocess.run [163](https://github.com/vbotka/ansible-examples/tree/master/examples/example-163),
 
-**Custom test**
+<a name="Custom_test"></a>Custom test
   - fqdn_valid [299](https://github.com/vbotka/ansible-examples/tree/master/examples/example-299),
 
-**Data structure**
+<a name="Data_structure"></a>Data structure
   - Block Scalar Styles [196](https://github.com/vbotka/ansible-examples/tree/master/examples/example-196),
   - JSON [179](https://github.com/vbotka/ansible-examples/tree/master/examples/example-179),
   - YAML [179](https://github.com/vbotka/ansible-examples/tree/master/examples/example-179),
 [196](https://github.com/vbotka/ansible-examples/tree/master/examples/example-196),
 
-**Delegation**
+<a name="Delegation"></a>Delegation
   - delegate_facts [186](https://github.com/vbotka/ansible-examples/tree/master/examples/example-186),
   - local_action [83](https://github.com/vbotka/ansible-examples/tree/master/examples/example-083),
 
-**Deprecated**
+<a name="Deprecated"></a>Deprecated
   - warning [29](https://github.com/vbotka/ansible-examples/tree/master/examples/example-029),
 
-**Devel**
+<a name="Devel"></a>Devel
   - Custom modules [256](https://github.com/vbotka/ansible-examples/tree/master/examples/example-256),
+  - Debugging modules [315](https://github.com/vbotka/ansible-examples/tree/master/examples/example-315),
   - Development of a module [279](https://github.com/vbotka/ansible-examples/tree/master/examples/example-279),
+  - Docsite helpers [316](https://github.com/vbotka/ansible-examples/tree/master/examples/example-316),
   - filter_core [291](https://github.com/vbotka/ansible-examples/tree/master/examples/example-291),
   - Job management (async, async_status, kill, logger, cache) [287](https://github.com/vbotka/ansible-examples/tree/master/examples/example-287),
   - Role UBUNTU20-CIS [293](https://github.com/vbotka/ansible-examples/tree/master/examples/example-293),
   - Supports_check_mode and changed [279](https://github.com/vbotka/ansible-examples/tree/master/examples/example-279),
   - vbotka.ansible.community.general filter any2items [237](https://github.com/vbotka/ansible-examples/tree/master/examples/example-237),
 
-**Dictionary**
+<a name="Dictionary"></a>Dictionary
   - Create, update, combine [207](https://github.com/vbotka/ansible-examples/tree/master/examples/example-207),
   - Iterate dictionary in play [3](https://github.com/vbotka/ansible-examples/tree/master/examples/example-003),
   - Iterate dictionary in template [1](https://github.com/vbotka/ansible-examples/tree/master/examples/example-001),
   - Select items from dictionary [12](https://github.com/vbotka/ansible-examples/tree/master/examples/example-012),
 
-**Handlers**
+<a name="Handlers"></a>Handlers
   - notify [187](https://github.com/vbotka/ansible-examples/tree/master/examples/example-187),
 
-**Import**
+<a name="Import"></a>Import
   - import_playbook [15](https://github.com/vbotka/ansible-examples/tree/master/examples/example-015),
 
-**Include**
+<a name="Include"></a>Include
   - Galaxy role vbotka.ansible_lib [65](https://github.com/vbotka/ansible-examples/tree/master/examples/example-065),
 [66](https://github.com/vbotka/ansible-examples/tree/master/examples/example-066),
   - include_role [18](https://github.com/vbotka/ansible-examples/tree/master/examples/example-018),
@@ -224,22 +305,26 @@ Various examples of Ansible code.
   - include_vars [24](https://github.com/vbotka/ansible-examples/tree/master/examples/example-024),
 [66](https://github.com/vbotka/ansible-examples/tree/master/examples/example-066),
 
-**Indentation**
+<a name="Indentation"></a>Indentation
   - Test indentation of a block [13](https://github.com/vbotka/ansible-examples/tree/master/examples/example-013),
 
-**Inventory**
+<a name="Inventory"></a>Inventory
   - Dynamic inventory [125](https://github.com/vbotka/ansible-examples/tree/master/examples/example-125),
   - hosts [86](https://github.com/vbotka/ansible-examples/tree/master/examples/example-086),
 
-**Jinja**
+<a name="Inventory_plugin"></a>Inventory plugin
+  - ansible.builtin.constructed [309](https://github.com/vbotka/ansible-examples/tree/master/examples/example-309),
+
+<a name="Jinja"></a>Jinja
   - Jinja template formatting [236](https://github.com/vbotka/ansible-examples/tree/master/examples/example-236),
   - Jinja tests [265](https://github.com/vbotka/ansible-examples/tree/master/examples/example-265),
   - loop.index [295](https://github.com/vbotka/ansible-examples/tree/master/examples/example-295),
   - lstrip_blocks [100](https://github.com/vbotka/ansible-examples/tree/master/examples/example-100),
   - trim_blocks [100](https://github.com/vbotka/ansible-examples/tree/master/examples/example-100),
+  - White space control [320](https://github.com/vbotka/ansible-examples/tree/master/examples/example-320),
   - white-space control [100](https://github.com/vbotka/ansible-examples/tree/master/examples/example-100),
 
-**Jinja filter**
+<a name="Jinja_filter"></a>Jinja filter
   - batch [268](https://github.com/vbotka/ansible-examples/tree/master/examples/example-268),
   - escape [74](https://github.com/vbotka/ansible-examples/tree/master/examples/example-074),
   - format [244](https://github.com/vbotka/ansible-examples/tree/master/examples/example-244),
@@ -262,38 +347,44 @@ Various examples of Ansible code.
   - trim [4](https://github.com/vbotka/ansible-examples/tree/master/examples/example-004),
   - unique [211](https://github.com/vbotka/ansible-examples/tree/master/examples/example-211),
 
-**Jinja function**
+<a name="Jinja_function"></a>Jinja function
   - dict [240](https://github.com/vbotka/ansible-examples/tree/master/examples/example-240),
   - range [118](https://github.com/vbotka/ansible-examples/tree/master/examples/example-118),
 
-**Jinja template**
+<a name="Jinja_template"></a>Jinja template
   - ansible_managed [278](https://github.com/vbotka/ansible-examples/tree/master/examples/example-278),
   - extends [194](https://github.com/vbotka/ansible-examples/tree/master/examples/example-194),
   - if then else [191](https://github.com/vbotka/ansible-examples/tree/master/examples/example-191),
   - set [73](https://github.com/vbotka/ansible-examples/tree/master/examples/example-073),
   - template [75](https://github.com/vbotka/ansible-examples/tree/master/examples/example-075),
 
-**List**
+<a name="Lint"></a>Lint
+  - ansible-lint [317](https://github.com/vbotka/ansible-examples/tree/master/examples/example-317),
+
+<a name="List"></a>List
   - Add item to list [99](https://github.com/vbotka/ansible-examples/tree/master/examples/example-099),
   - Managing lists [247](https://github.com/vbotka/ansible-examples/tree/master/examples/example-247),
 
-**Lookup**
+<a name="Lookup"></a>Lookup
   - ansible.builtin.indexed_items [170](https://github.com/vbotka/ansible-examples/tree/master/examples/example-170),
   - ansible.utils.to_paths [280](https://github.com/vbotka/ansible-examples/tree/master/examples/example-280),
   - community.general.dig [169](https://github.com/vbotka/ansible-examples/tree/master/examples/example-169),
+  - community.general.merge_variables [300](https://github.com/vbotka/ansible-examples/tree/master/examples/example-300),
   - dig [169](https://github.com/vbotka/ansible-examples/tree/master/examples/example-169),
   - env [116](https://github.com/vbotka/ansible-examples/tree/master/examples/example-116),
   - file [210](https://github.com/vbotka/ansible-examples/tree/master/examples/example-210),
   - fileglob [106](https://github.com/vbotka/ansible-examples/tree/master/examples/example-106),
   - first_found [120](https://github.com/vbotka/ansible-examples/tree/master/examples/example-120),
   - inventory_hostnames [271](https://github.com/vbotka/ansible-examples/tree/master/examples/example-271),
+  - merge_variables [300](https://github.com/vbotka/ansible-examples/tree/master/examples/example-300),
   - password [145](https://github.com/vbotka/ansible-examples/tree/master/examples/example-145),
   - pipe [184](https://github.com/vbotka/ansible-examples/tree/master/examples/example-184),
+[318](https://github.com/vbotka/ansible-examples/tree/master/examples/example-318),
   - subelements [40](https://github.com/vbotka/ansible-examples/tree/master/examples/example-040),
   - to_paths [280](https://github.com/vbotka/ansible-examples/tree/master/examples/example-280),
   - with_indexed_items [170](https://github.com/vbotka/ansible-examples/tree/master/examples/example-170),
 
-**Loop**
+<a name="Loop"></a>Loop
   - extended [220](https://github.com/vbotka/ansible-examples/tree/master/examples/example-220),
   - Extended loop variables [220](https://github.com/vbotka/ansible-examples/tree/master/examples/example-220),
   - include_tasks [241](https://github.com/vbotka/ansible-examples/tree/master/examples/example-241),
@@ -310,12 +401,15 @@ Various examples of Ansible code.
   - with_sequence [6](https://github.com/vbotka/ansible-examples/tree/master/examples/example-006),
   - with_together zip [63](https://github.com/vbotka/ansible-examples/tree/master/examples/example-063),
 
-**Math**
+<a name="Math"></a>Math
   - Arithmetic [55](https://github.com/vbotka/ansible-examples/tree/master/examples/example-055),
   - compare integers [263](https://github.com/vbotka/ansible-examples/tree/master/examples/example-263),
   - Jinja math [10](https://github.com/vbotka/ansible-examples/tree/master/examples/example-010),
 
-**Module**
+<a name="Methods"></a>Methods
+  - keys() [308](https://github.com/vbotka/ansible-examples/tree/master/examples/example-308),
+
+<a name="Module"></a>Module
   - add_host [134](https://github.com/vbotka/ansible-examples/tree/master/examples/example-134),
   - ansible.builtin.add_host [134](https://github.com/vbotka/ansible-examples/tree/master/examples/example-134),
   - ansible.builtin.assert [239](https://github.com/vbotka/ansible-examples/tree/master/examples/example-239),
@@ -393,6 +487,7 @@ Various examples of Ansible code.
   - flush_handlers [288](https://github.com/vbotka/ansible-examples/tree/master/examples/example-288),
   - get_url [273](https://github.com/vbotka/ansible-examples/tree/master/examples/example-273),
   - getent [48](https://github.com/vbotka/ansible-examples/tree/master/examples/example-048),
+  - group [324](https://github.com/vbotka/ansible-examples/tree/master/examples/example-324),
   - group_by [108](https://github.com/vbotka/ansible-examples/tree/master/examples/example-108),
   - import_role [124](https://github.com/vbotka/ansible-examples/tree/master/examples/example-124),
   - include_role [124](https://github.com/vbotka/ansible-examples/tree/master/examples/example-124),
@@ -434,48 +529,48 @@ Various examples of Ansible code.
   - xml [199](https://github.com/vbotka/ansible-examples/tree/master/examples/example-199),
   - yum [107](https://github.com/vbotka/ansible-examples/tree/master/examples/example-107),
 
-**Parameter**
+<a name="Parameter"></a>Parameter
   - check ansible-playbook parameter, ansible_check_mode [213](https://github.com/vbotka/ansible-examples/tree/master/examples/example-213),
   - limit [132](https://github.com/vbotka/ansible-examples/tree/master/examples/example-132),
   - validate [164](https://github.com/vbotka/ansible-examples/tree/master/examples/example-164),
 
-**Playbook**
+<a name="Playbook"></a>Playbook
   - Run the playbook only on one host per group [47](https://github.com/vbotka/ansible-examples/tree/master/examples/example-047),
 
-**Python method**
+<a name="Python_method"></a>Python method
   - index [117](https://github.com/vbotka/ansible-examples/tree/master/examples/example-117),
   - split [21](https://github.com/vbotka/ansible-examples/tree/master/examples/example-021),
 [251](https://github.com/vbotka/ansible-examples/tree/master/examples/example-251),
   - splitlines [157](https://github.com/vbotka/ansible-examples/tree/master/examples/example-157),
 
-**Recursion**
+<a name="Recursion"></a>Recursion
   - Referencing other dict keys in the same parent dict is not supported [129](https://github.com/vbotka/ansible-examples/tree/master/examples/example-129),
 
-**Role**
+<a name="Role"></a>Role
   - al_bsd_service_facts [270](https://github.com/vbotka/ansible-examples/tree/master/examples/example-270),
   - CIS role UBUNTU20-CIS [293](https://github.com/vbotka/ansible-examples/tree/master/examples/example-293),
   - Galaxy role vbotka.ansible_lib [270](https://github.com/vbotka/ansible-examples/tree/master/examples/example-270),
   - Galaxy role vbotka.config_light [148](https://github.com/vbotka/ansible-examples/tree/master/examples/example-148),
   - Role defaults [266](https://github.com/vbotka/ansible-examples/tree/master/examples/example-266),
 
-**Setup**
+<a name="Setup"></a>Setup
   - ansible.builtin.setup [9](https://github.com/vbotka/ansible-examples/tree/master/examples/example-009),
   - ansible_interfaces [252](https://github.com/vbotka/ansible-examples/tree/master/examples/example-252),
   - ansible_mounts [249](https://github.com/vbotka/ansible-examples/tree/master/examples/example-249),
   - gather_facts [9](https://github.com/vbotka/ansible-examples/tree/master/examples/example-009),
   - service_facts [9](https://github.com/vbotka/ansible-examples/tree/master/examples/example-009),
 
-**Special variables**
+<a name="Special_variables"></a>Special variables
   - ansible_play_batch [255](https://github.com/vbotka/ansible-examples/tree/master/examples/example-255),
   - ansible_play_hosts [255](https://github.com/vbotka/ansible-examples/tree/master/examples/example-255),
   - ansible_play_hosts_all [255](https://github.com/vbotka/ansible-examples/tree/master/examples/example-255),
   - group_names [175](https://github.com/vbotka/ansible-examples/tree/master/examples/example-175),
   - groups [113](https://github.com/vbotka/ansible-examples/tree/master/examples/example-113),
 
-**Strategy plugin**
+<a name="Strategy_plugin"></a>Strategy plugin
   - host_pinned [221](https://github.com/vbotka/ansible-examples/tree/master/examples/example-221),
 
-**String**
+<a name="String"></a>String
   - Concatenate strings [246](https://github.com/vbotka/ansible-examples/tree/master/examples/example-246),
   - match [79](https://github.com/vbotka/ansible-examples/tree/master/examples/example-079),
   - regex [79](https://github.com/vbotka/ansible-examples/tree/master/examples/example-079),
@@ -483,42 +578,44 @@ Various examples of Ansible code.
   - string manipulation [200](https://github.com/vbotka/ansible-examples/tree/master/examples/example-200),
   - testing strings [79](https://github.com/vbotka/ansible-examples/tree/master/examples/example-079),
 
-**Syntax**
+<a name="Syntax"></a>Syntax
   - Python null [224](https://github.com/vbotka/ansible-examples/tree/master/examples/example-224),
   - YAML None [224](https://github.com/vbotka/ansible-examples/tree/master/examples/example-224),
 
-**Tags**
+<a name="Tags"></a>Tags
   - block tags [264](https://github.com/vbotka/ansible-examples/tree/master/examples/example-264),
   - import_playbook and tags [19](https://github.com/vbotka/ansible-examples/tree/master/examples/example-019),
   - variable in tags [269](https://github.com/vbotka/ansible-examples/tree/master/examples/example-269),
 
-**Template**
+<a name="Template"></a>Template
   - INI [297](https://github.com/vbotka/ansible-examples/tree/master/examples/example-297),
 [298](https://github.com/vbotka/ansible-examples/tree/master/examples/example-298),
 
-**Test**
+<a name="Test"></a>Test
   - boolean [294](https://github.com/vbotka/ansible-examples/tree/master/examples/example-294),
   - bulk-set task arguments [89](https://github.com/vbotka/ansible-examples/tree/master/examples/example-089),
   - Galaxy role vbotka.linux_lib [90](https://github.com/vbotka/ansible-examples/tree/master/examples/example-090),
   - is all [296](https://github.com/vbotka/ansible-examples/tree/master/examples/example-296),
+  - issubset [322](https://github.com/vbotka/ansible-examples/tree/master/examples/example-322),
   - items2dict2 [114](https://github.com/vbotka/ansible-examples/tree/master/examples/example-114),
   - iterable [294](https://github.com/vbotka/ansible-examples/tree/master/examples/example-294),
   - mapping [294](https://github.com/vbotka/ansible-examples/tree/master/examples/example-294),
   - race conditions [258](https://github.com/vbotka/ansible-examples/tree/master/examples/example-258),
   - sequence [294](https://github.com/vbotka/ansible-examples/tree/master/examples/example-294),
   - string [294](https://github.com/vbotka/ansible-examples/tree/master/examples/example-294),
+  - subset [322](https://github.com/vbotka/ansible-examples/tree/master/examples/example-322),
 
-**Tools**
+<a name="Tools"></a>Tools
   - Debug tools [31](https://github.com/vbotka/ansible-examples/tree/master/examples/example-031),
 
-**Utility**
+<a name="Utility"></a>Utility
   - ansible-inventory [27](https://github.com/vbotka/ansible-examples/tree/master/examples/example-027),
   - ansible-pull [233](https://github.com/vbotka/ansible-examples/tree/master/examples/example-233),
   - ansible-runner [126](https://github.com/vbotka/ansible-examples/tree/master/examples/example-126),
   - jq [60](https://github.com/vbotka/ansible-examples/tree/master/examples/example-060),
   - passwordstore [234](https://github.com/vbotka/ansible-examples/tree/master/examples/example-234),
 
-**Vars**
+<a name="Vars"></a>Vars
   - ansible_facts [165](https://github.com/vbotka/ansible-examples/tree/master/examples/example-165),
   - facts.d [177](https://github.com/vbotka/ansible-examples/tree/master/examples/example-177),
   - group_vars [71](https://github.com/vbotka/ansible-examples/tree/master/examples/example-071),
@@ -531,11 +628,11 @@ Various examples of Ansible code.
   - Test names in a block [23](https://github.com/vbotka/ansible-examples/tree/master/examples/example-023),
   - vars_prompt, pause [36](https://github.com/vbotka/ansible-examples/tree/master/examples/example-036),
 
-**vbotka.ansible_lib**
+<a name="vbotka.ansible_lib"></a>vbotka.ansible_lib
   - al_bsd_service_facts [270](https://github.com/vbotka/ansible-examples/tree/master/examples/example-270),
 
 
-## Contents
+## Examples
 
 - [Example   1.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-001) "Dictionary; Iterate dictionary in template;"
 - [Example   2.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-002) "Ansible filter; json_query; Basics."
@@ -839,6 +936,32 @@ Various examples of Ansible code.
 - [Example 297.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-297) "Template; INI; General INI template. Data in list. Optional case-sensitive sections (default=False)."
 - [Example 298.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-298) "Template; INI; General INI template. Data in dictionary. No value allowed. Optional extra space (default=False)."
 - [Example 299.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-299) "Custom test; fqdn_valid; Validates fully-qualified domain names against RFC 1123."
+- [Example 300.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-300) "Lookup; merge_variables; community.general.merge_variables; Merge variables with a certain pattern."
+- [Example 301.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-301) "Ansible filter; lists_difference; community.general.lists_difference; Difference of lists with a predictive order."
+- [Example 302.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-302) "Ansible filter; lists_intersect; community.general.lists_intersect; Intersection of lists with a predictive order."
+- [Example 303.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-303) "Custom filter; keep_keys; ansible.utils.keep_keys; Keep specific keys from dictionaries in a list."
+- [Example 304.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-304) "Custom filter; remove_keys; ansible.utils.remove_keys; Remove specific keys from dictionaries in a list."
+- [Example 305.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-305) "Custom filter; replace_keys; ansible.utils.replace_keys; Replace specific keys in a list of dictionaries."
+- [Example 306.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-306) "Ansible contribution; community.general; Update chapter merging_lists_of_dictionaries."
+- [Example 307.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-307) "Ansible filter; community.general.remove_keys; Remove specific keys from dictionaries in a list."
+- [Example 308.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-308) "Methods; keys(); Get list of the dictionarys' keys."
+- [Example 309.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-309) "Inventory plugin; ansible.builtin.constructed; Create allowed hosts group."
+- [Example 310.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-310) "Ansible filter; community.general.keep_keys; Keep specific keys from dictionaries in a list."
+- [Example 311.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-311) "Ansible test; community.general.ansible_type; Validate Ansible type."
+- [Example 311.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-311) "Ansible filter; community.general.reveal_ansible_type; Return Ansible type."
+- [Example 312.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-312) "Basics; dict;"
+- [Example 313.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-313) "Basics; lazy evaluation; Reevaluate a variable on each access."
+- [Example 314.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-314) "Ansible filter; json_query; Nested JSON objects."
+- [Example 315.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-315) "Devel; Debugging modules;"
+- [Example 316.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-316) "Devel; Docsite helpers;"
+- [Example 317.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-317) "Lint; ansible-lint; key-order[task]."
+- [Example 318.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-318) "Lookup; pipe; read local file."
+- [Example 319.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-319) "Ansible filter; basename; Returns the last name component of a path."
+- [Example 320.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-320) "Jinja; White space control; Add dash to remove blank lines."
+- [Example 321.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-321) "Basics; Handlers; Notify handler on the block."
+- [Example 322.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-322) "Test; subset; issubset; First list is a subset of the second list."
+- [Example 323.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-323) "Ansible keyword; check_mode;"
+- [Example 324.](https://github.com/vbotka/ansible-examples/tree/master/examples/example-324) "Module; group; Test FreeBSD."
 
 
 ## Update README.md
